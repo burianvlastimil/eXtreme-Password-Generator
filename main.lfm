@@ -1,0 +1,337 @@
+object FormMain: TFormMain
+  Left = 539
+  Height = 506
+  Top = 90
+  Width = 1163
+  ActiveControl = TBLength
+  AutoSize = True
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'eXtreme Password Generator 0.1 (alpha)'
+  ClientHeight = 506
+  ClientWidth = 1163
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '1.6.0.4'
+  object Panel2: TPanel
+    Left = 0
+    Height = 430
+    Top = 0
+    Width = 577
+    AutoSize = True
+    ClientHeight = 430
+    ClientWidth = 577
+    TabOrder = 0
+    object ESpecialChars: TEdit
+      Left = 4
+      Height = 27
+      Top = 402
+      Width = 288
+      TabOrder = 0
+      Text = 'ESpecialChars'
+    end
+    object ChBIncludeLowerLetters: TCheckBox
+      Left = 227
+      Height = 22
+      Top = 165
+      Width = 65
+      Caption = 'Include'
+      Checked = True
+      Font.Color = clGreen
+      OnChange = ChBIncludeLowerLettersChange
+      OnClick = ChBIncludeLowerLettersClick
+      OnMouseEnter = TBLowercaseCharsMouseEnter
+      OnMouseLeave = TBLowercaseCharsMouseLeave
+      ParentFont = False
+      State = cbChecked
+      TabOrder = 1
+    end
+    object ChBIncludeUpperLetters: TCheckBox
+      Left = 227
+      Height = 22
+      Top = 245
+      Width = 65
+      Caption = 'Include'
+      Checked = True
+      Font.Color = clGreen
+      OnClick = ChBIncludeLowerLettersClick
+      OnMouseEnter = TBUppercaseCharsMouseEnter
+      OnMouseLeave = TBUppercaseCharsMouseLeave
+      ParentFont = False
+      State = cbChecked
+      TabOrder = 2
+    end
+    object ChBIncludeDigits: TCheckBox
+      Left = 227
+      Height = 22
+      Top = 90
+      Width = 65
+      Caption = 'Include'
+      Checked = True
+      Font.Color = clGreen
+      OnClick = ChBIncludeLowerLettersClick
+      OnMouseEnter = TBDigitsMouseEnter
+      OnMouseLeave = TBDigitsMouseLeave
+      ParentFont = False
+      State = cbChecked
+      TabOrder = 3
+    end
+    object ChBIncludeSpecialChars: TCheckBox
+      Left = 227
+      Height = 22
+      Top = 325
+      Width = 65
+      Caption = 'Include'
+      Checked = True
+      Font.Color = clGreen
+      OnChange = ChBIncludeSpecialCharsChange
+      OnClick = ChBIncludeLowerLettersClick
+      OnMouseEnter = TBSpecialCharsMouseEnter
+      OnMouseLeave = TBSpecialCharsMouseLeave
+      ParentFont = False
+      State = cbChecked
+      TabOrder = 4
+    end
+    object UDPasswordCharCount: TSpinEdit
+      Left = 223
+      Height = 27
+      Top = 1
+      Width = 69
+      Color = 42240
+      MaxValue = 128
+      MinValue = 6
+      OnChange = UDPasswordCharCountChange
+      OnMouseEnter = TBLengthMouseEnter
+      OnMouseLeave = TBLengthMouseLeave
+      TabOrder = 5
+      Value = 32
+    end
+    object BGenerateList: TButton
+      Left = 316
+      Height = 25
+      Top = 400
+      Width = 112
+      Caption = 'Generate List'
+      OnClick = BGenerateListClick
+      TabOrder = 6
+      Visible = False
+    end
+    object UDSpecialCharsMax: TSpinEdit
+      Left = 132
+      Height = 27
+      Top = 322
+      Width = 69
+      MaxValue = 20
+      TabOrder = 7
+      Value = 5
+    end
+    object LBPasswordList: TListBox
+      Left = 316
+      Height = 176
+      Top = 1
+      Width = 260
+      Font.Height = -12
+      Font.Name = 'Monospace'
+      ItemHeight = 0
+      OnClick = LBPasswordListClick
+      OnDblClick = LBPasswordListDblClick
+      OnMouseDown = LBPasswordListMouseDown
+      OnMouseLeave = LBPasswordListMouseLeave
+      OnMouseMove = LBPasswordListMouseMove
+      ParentFont = False
+      PopupMenu = PMListBox
+      ScrollWidth = 258
+      TabOrder = 8
+      TopIndex = -1
+    end
+    object TBDigits: TTrackBar
+      Left = 1
+      Height = 37
+      Top = 114
+      Width = 288
+      Max = 128
+      Min = -1
+      OnChange = TBDigitsChange
+      Position = -1
+      Enabled = False
+      OnMouseEnter = TBDigitsMouseEnter
+      OnMouseLeave = TBDigitsMouseLeave
+      TabOrder = 9
+    end
+    object Digits: TLabel
+      Left = 4
+      Height = 17
+      Top = 88
+      Width = 32
+      Caption = 'Digits'
+      ParentColor = False
+    end
+    object TBLowercaseChars: TTrackBar
+      Left = 4
+      Height = 37
+      Top = 194
+      Width = 288
+      Max = 128
+      Min = -1
+      OnChange = TBLowercaseCharsChange
+      Position = -1
+      Enabled = False
+      OnMouseEnter = TBLowercaseCharsMouseEnter
+      OnMouseLeave = TBLowercaseCharsMouseLeave
+      TabOrder = 10
+    end
+    object LowerCharacters: TLabel
+      Left = 4
+      Height = 17
+      Top = 170
+      Width = 99
+      Caption = 'Lower Characters'
+      ParentColor = False
+    end
+    object TBUppercaseChars: TTrackBar
+      Left = 4
+      Height = 37
+      Top = 272
+      Width = 288
+      Max = 128
+      Min = -1
+      OnChange = TBUppercaseCharsChange
+      Position = -1
+      Enabled = False
+      OnMouseEnter = TBUppercaseCharsMouseEnter
+      OnMouseLeave = TBUppercaseCharsMouseLeave
+      TabOrder = 11
+    end
+    object UpperCharacters: TLabel
+      Left = 4
+      Height = 17
+      Top = 250
+      Width = 100
+      Caption = 'Upper Characters'
+      ParentColor = False
+    end
+    object TBSpecialChars: TTrackBar
+      Left = 4
+      Height = 37
+      Top = 360
+      Width = 288
+      Max = 128
+      Min = -1
+      OnChange = TBSpecialCharsChange
+      Position = -1
+      Enabled = False
+      OnMouseEnter = TBSpecialCharsMouseEnter
+      OnMouseLeave = TBSpecialCharsMouseLeave
+      TabOrder = 12
+    end
+    object SpecialCharacters: TLabel
+      Left = 4
+      Height = 17
+      Top = 330
+      Width = 105
+      Caption = 'Special Characters'
+      ParentColor = False
+    end
+    object TBLength: TTrackBar
+      Left = 4
+      Height = 37
+      Top = 26
+      Width = 288
+      Max = 128
+      Min = 6
+      OnChange = TBLengthChange
+      Position = 32
+      OnMouseEnter = TBLengthMouseEnter
+      OnMouseLeave = TBLengthMouseLeave
+      TabOrder = 13
+    end
+    object LLength: TLabel
+      Left = 4
+      Height = 17
+      Top = 9
+      Width = 38
+      Caption = 'Length'
+      ParentColor = False
+    end
+    object PRandSeed: TPanel
+      Left = 316
+      Height = 80
+      Top = 298
+      Width = 260
+      Caption = 'Generate (Move mouse over)'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 14
+      OnClick = PRandSeedClick
+      OnMouseMove = PRandSeedMouseMove
+    end
+    object Label1: TLabel
+      Left = 372
+      Height = 17
+      Top = 382
+      Width = 133
+      Caption = 'Click to display the seed'
+      ParentColor = False
+    end
+    object LDoubleClickInfo: TLabel
+      Left = 316
+      Height = 17
+      Top = 184
+      Width = 247
+      Caption = 'Double-click to copy password into clipboard'
+      ParentColor = False
+    end
+    object ChBRevealPasswordsWhileHovering: TCheckBox
+      Left = 316
+      Height = 22
+      Top = 216
+      Width = 208
+      Caption = 'Reveal passwords while hovering'
+      Checked = True
+      State = cbChecked
+      TabOrder = 15
+    end
+    object Label3: TLabel
+      Left = 56
+      Height = 17
+      Top = 112
+      Width = 165
+      Caption = 'will be available in version 0.2'
+      ParentColor = False
+    end
+    object Label4: TLabel
+      Left = 56
+      Height = 17
+      Top = 194
+      Width = 165
+      Caption = 'will be available in version 0.2'
+      ParentColor = False
+    end
+    object Label5: TLabel
+      Left = 56
+      Height = 17
+      Top = 272
+      Width = 165
+      Caption = 'will be available in version 0.2'
+      ParentColor = False
+    end
+    object Label6: TLabel
+      Left = 56
+      Height = 17
+      Top = 360
+      Width = 165
+      Caption = 'will be available in version 0.2'
+      ParentColor = False
+    end
+  end
+  object PMListBox: TPopupMenu
+    OnPopup = PMListBoxPopup
+    left = 520
+    top = 376
+    object MICopyPasswordIntoClipboard: TMenuItem
+      Caption = 'Copy password into clipboard'
+      OnClick = MICopyPasswordIntoClipboardClick
+    end
+  end
+end
